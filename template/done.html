@@ -1,0 +1,21 @@
+{% extends 'grandmaster.html' %}
+{% block title %}Complete{% endblock title %}
+{% load static %}
+
+{% block content %}
+     <section class ="donepage dlbgbox">
+        <div class="container">
+            <!-- <img src="{% static 'imges/loading2.gif' %}" alt=""> -->
+            <lord-icon
+            src="https://cdn.lordicon.com/hjeefwhm.json"
+            trigger="loop"
+            delay="2000"
+            colors="primary:#256D85"
+            style="width:150px;height:150px">
+            </lord-icon>
+            <br><br>
+            <h4 style="color:#256D85;font-size: 14px;letter-spacing: 2px;">DOWNLOAD COMPLETE</h4>
+            <p style="color:#666">Your video/Audio Downloaded Successfully  go to <i>Download > ytDownlaod</i>  </p>
+        </div>
+     </section>
+{% endblock content %}

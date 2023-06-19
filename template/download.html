@@ -1,0 +1,105 @@
+{% extends 'grandmaster.html' %}
+{% block title %}download{% endblock title %}
+{% load static %}
+{% block content %}
+
+<section class="dlbgbox" style="padding-top:120px ;">
+    <div class="loading" id="loading">
+        <div class="bx">
+            <span> <img src="{% static 'load/load.gif' %}" alt=""></span>
+            <p>Downlaoding... </p>
+        </div> 
+    </div>
+
+
+
+    <div class="container">
+    <h2 class="text-color">Download Your Video</h2><hr>
+    <div class="row">
+        <div class="col-lg-4 col-md-12">
+            <div class="img-bx">
+                <img src="{{ ytImg }}" alt="error to fatch your image">
+            </div>
+            <br>
+        </div>
+        <div class="col-lg-8 col-md-12">
+            <ul class="list-group">
+                <li class="list-group-item active py-4 video-info"  aria-current="true">
+                    {{title}} <br><br>
+                    <span>{{duration}}</span>
+                    <span>{{views}}</span>
+                    <span>{{pubDate}}</span>
+                </li><br>
+                <h4 style="font-size: 20px;letter-spacing: 1px;color:#293462;margin-top: 30px;">Videos</h4>
+                <table class="table">
+                    <tr >
+                        <td class="text-color"><b>Quality</b> </td>
+                        <td class="text-color"><b> Size </b></td>
+                        <td class="text-color"><b> Download </b></td>
+                    </tr>
+               
+                    {% for i in vidList %}
+                        <tr  >
+                            <td class="text-color">{{i.resolution}}</td>
+                            <td class="text-color">{{i.filesize}}</td>
+                            <td class="text-color">
+                                <form action="{% url 'ytproject:download_done' i.resolution  %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="submit" class="btn_dl" value="Download">
+                                </form>
+                               
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+
+
+                <h4 style="font-size: 20px;letter-spacing: 1px;color:#293462;margin-top: 30px;">Audio</h4>
+                <table class="table">
+                    <tr >
+                        <td  class="text-color"><b>Quality</b> </td>
+                        <td class="text-color"><b> Size </b></td>
+                        <td class="text-color"><b> Download </b></td>
+                    </tr>
+               
+                    {% for i in audio %}
+                        <tr  >
+                            <td class="text-color">{{i.abr}}</td>
+                            <td class="text-color">{{i.mime_type}}</td>
+                            <td class="text-color">
+                                <form action="{% url 'ytproject:download_done' i.abr  %}" method="get">
+                                    {% csrf_token %}
+                                    <input type="submit" value="Download">
+                                </form>
+                               
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+              </ul>
+
+
+              <!-- <h4>Audio</h4>
+                <table class="table">
+                    <tr >
+                        <td ><b>Quality</b> </td>
+                        <td ><b> size </b></td>
+                        <td ><b> Download </b></td>
+                    </tr>
+               
+                    {% for j in audio %}
+                        <tr  >
+                            <td>{{j.resolution}}</td>
+                            <td>{{j.filesize}}</td>
+                            <td><a href="/vdownload">downlaod</a></td>
+                        </tr>
+                    {% endfor %}
+                </table> -->
+        </div>
+    </div>
+    </div>
+    
+</section>
+
+{% endblock content %}

@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,600;1,800&display=swap');
+*{
+    font-family: 'Poppins', sans-serif !important;
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
+:root{
+    --bg-color:rgb(238,238,238);
+    --nav-color:#f8f9fa;
+    --text-color:#333;
+    --text-box:#fff;
+    --text-box-border:rgb(212,212,212);
+    --nav-text:rgba(0,0,0,0.55);
+    --nav-active-text:#222;
+}
+
+.dark-mode{ 
+    --bg-color:#161623;
+    --nav-color:#2d2d46;
+    --text-color:#f0f0f0;
+    --text-box:#0a0a11;
+    --text-box-border:#2d2d46;
+    --nav-text:rgba(255,255,255,0.55);
+    --nav-active-text:#fff;
+}
+
+
+.dropdown-menu[data-bs-popper] {
+    left: -58px;
+}
+.navbar{
+    padding:15px 70px;
+    box-shadow:0px 1px 8px 2px rgba(0,0,0,0.04);
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    z-index: 10000;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background:var(--nav-color) !important;
+}
+
+.bg-light {
+    background-color: none ;
+}
+.navbar-brand{
+    color:var(--nav-active-text);}
+.nav-link{
+    font-weight: 300;
+    color:var(--nav-text);
+}
+
+.nav-link:hover,
+.navbar-brand:hover{
+    color:var(--nav-active-text);
+}
+.active{
+    color:var(--nav-active-text) !important;
+}
+.dlbox{
+    padding: 100px;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center; 
+    background: var(--bg-color);
+    
+    /* background: #EEEBDD; */
+}
+
+.input_bx{
+    width:100%;
+    text-align: center;
+}
+.text-color{
+    color:var(--text-color)
+}
+#drak-theme i{
+    margin-right: 10px;
+}
+#dark-theme{
+    cursor: pointer;
+}
+.link_textbox{
+    width:54%;
+    padding: 6px 12px;
+    border:1px solid var(--text-box-border);
+    color:var(--text-color);
+    background: var(--text-box);
+    padding-right: 70px;
+}
+@media(max-width:960px){
+    .dlbox{
+        padding: 100px 20px;
+    }
+    .link_textbox{
+        width: 85%;
+    }
+}
+@media(max-width:1200px){
+    .dlbox{
+        padding: 100px 20px;
+    }
+    .link_textbox{
+        width: 85%;
+    }
+}
+.link_textbox:focus{
+    outline: none;
+    border: 1px solid white;
+    box-shadow:0px 4px 8px 2px rgba(0,0,0,0.1);
+}
+.link_textbox:focus .link_btn{
+    box-shadow:0px 4px 8px 2px rgba(0,0,0,0.1);
+}
+.link_btn{
+    padding: 6px 12px;
+    border-left: 0;
+    background:transparent;
+    /* border:1px solid rgb(163, 163, 163); */
+    margin-left: -55px;
+    border:none;
+    color:#333;
+    font-weight: 600;
+}
+.link_btn:hover{
+    color:royalblue;
+}
+
+.buttom_nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:absolute;
+    bottom: 0;
+    padding: 20px 0;
+}
+
+.buttom_nav .social_media ul{
+    display: flex;
+    align-items:center;
+}
+.buttom_nav .social_media ul li{
+    list-style: none;
+    margin-right: 30px;
+}
+
+/* downlaod page css */
+
+.img-bx{
+    width:400px;
+    width: 100%;
+    overflow: hidden; 
+    border-radius: 10px;
+}
+.img-bx img{
+    width:100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.video-info{
+    background:var(--text-box) !important;
+    color:var(--text-color) !important;
+    border:none;
+    border-radius: 10px !important;
+}
+#er_mess{
+    font-size: 12px;
+    font-style:italic;
+    margin-top: 10px;
+    opacity: .8;
+    color:red;
+}
+
+.loading{
+    position:fixed;
+    z-index: 4000;
+    top:0; right: 0;
+    bottom:0;left:0;
+    background:#fff;
+
+}
+.loading .bx{
+    position:absolute;
+    top:50%;left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.loading img{
+    width:250px;
+}
+.donepage{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+/* .btn_dl{
+    background:gainsboro;
+    border:none;
+    color:#333;
+    padding: 8px 18px;
+    border-radius: 28px;
+
+} */
+
+.theme li i{
+    margin-right: 10px;
+    color:var(--text-color);
+}
+.theme li a{
+    font-weight: 600;
+    color:var(--text-color);
+}
+.dlbgbox{
+    background: var(--bg-color);
+}
+#icon{
+    width:18px;
+    margin-right: 12px;
+}

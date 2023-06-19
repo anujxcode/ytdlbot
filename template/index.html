@@ -1,0 +1,38 @@
+{% extends 'grandmaster.html' %}
+{% load static %}
+{% block title %}home{% endblock title %}
+<!-- content -->
+{% block content %}
+<section class="dlbox" id="dlboxbg">
+
+    <div class="input_bx">
+        <span><h1 style="display: inline-block;" class="text-color">yt<span style="color:red">.</span> &nbsp;</h1></span>
+        <span style="font-size:28px;" class="text-color">|  Downloader</span><br><br>
+        
+        <form action="/download/"  name="myform" onsubmit="return is_valid()" method="post">
+            {% csrf_token %}
+            <input type="text" class="link_textbox"  id ="yt_link" name ="yt_link">
+            <input type="submit" class="link_btn" id ="sendbtn" value="GO">
+        </form>
+
+        <p id ="er_mess" ></p>
+    </div>
+
+
+
+    <div class="buttom_nav">
+        <div class="social_media">
+            <!-- <ul>
+                <li><a href="//" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="//" ><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="//"><i class="fa-brands fa-twitter"></i></a></li>
+            </ul> -->
+        </div>
+        <div class="copyright">
+            <p id="copyright" class="text-color">Made by anujrathore</p>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
